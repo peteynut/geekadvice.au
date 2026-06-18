@@ -36,7 +36,7 @@ export default function HomePage() {
           <div className="mt-7 flex flex-wrap items-center gap-3">
             <Link
               href="/blog/"
-              className="inline-flex items-center gap-2 rounded-full bg-ink px-4 py-2 text-sm font-mono text-white hover:opacity-90"
+              className="inline-flex items-center gap-2 rounded-full bg-ink px-4 py-2 text-sm font-mono text-bg hover:opacity-90"
             >
               Read the blog <ArrowRight className="h-4 w-4" />
             </Link>
