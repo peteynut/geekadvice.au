@@ -12,7 +12,14 @@
   },
   "navigationFallback": {
     "rewrite": "index.html",
-    "exclude": ["/favicon.svg", "/robots.txt", "/rss.xml", "/og.svg", "/images/*"]
+    "exclude": [
+      "/favicon.svg",
+      "/robots.txt",
+      "/rss.xml",
+      "/og.svg",
+      "/images/*",
+      "/_next/static/*"
+    ]
   },
   "responseOverrides": {
     "404": {

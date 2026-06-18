@@ -61,7 +61,7 @@ export function SiteFooter() {
           <p>
             &copy; {new Date().getFullYear()} {site.author}. All rights reserved.
           </p>
-          <p className="font-mono">v0.1.0 &middot; built in the 90s spirit</p>
+          <p className="font-mono">v0.1.6 &middot; built in the 90s spirit</p>
         </div>
       </div>
     </footer>
