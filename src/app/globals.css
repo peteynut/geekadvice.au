@@ -2,17 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+:root,
+:root[data-theme="light"] {
   --color-bg: #ffffff;
   --color-surface: #faf7ff;
   --color-text: #1a1a2e;
   --color-muted: #5a5a72;
+  --body-bg: #ffffff;
 
   --color-purple: #c8b6ff;
   --color-green: #b8f2c2;
   --color-yellow: #fff3a8;
   --color-blue: #b8e0ff;
   --color-pink: #ffc8dd;
+
+  --header-bg: rgba(255, 255, 255, 0.85);
+  --border-ink: rgba(26, 26, 46, 0.1);
+
+  --glow-pink: rgba(255, 195, 221, 0.55);
+  --glow-purple: rgba(200, 182, 255, 0.55);
+  --glow-green: rgba(184, 240, 194, 0.55);
+  --glow-yellow: rgba(255, 243, 168, 0.65);
+  --glow-blue: rgba(184, 224, 255, 0.6);
+  --glow-pink-soft: rgba(255, 195, 221, 0.45);
+  --glow-purple-soft: rgba(200, 182, 255, 0.35);
+}
+
+:root[data-theme="dark"] {
+  --color-bg: #14132a;
+  --color-surface: #1d1c3a;
+  --color-text: #ece9ff;
+  --color-muted: #a7a3c4;
+  --body-bg: #14132a;
+
+  --color-purple: #7c5cff;
+  --color-green: #4ed28a;
+  --color-yellow: #ffd86b;
+  --color-blue: #5ab0ff;
+  --color-pink: #ff7fb6;
+
+  --header-bg: rgba(20, 19, 42, 0.85);
+  --border-ink: rgba(236, 233, 255, 0.12);
+
+  --glow-pink: rgba(255, 127, 182, 0.28);
+  --glow-purple: rgba(124, 92, 255, 0.32);
+  --glow-green: rgba(78, 210, 138, 0.22);
+  --glow-yellow: rgba(255, 216, 107, 0.22);
+  --glow-blue: rgba(90, 176, 255, 0.26);
+  --glow-pink-soft: rgba(255, 127, 182, 0.2);
+  --glow-purple-soft: rgba(124, 92, 255, 0.22);
 }
 
 html,
@@ -22,27 +60,41 @@ body {
 }
 
 body {
-  background-color: #ffffff;
+  background-color: var(--body-bg);
   background-image:
-    radial-gradient(circle at 12% 18%, rgba(255, 195, 221, 0.55) 0, transparent 14%),
-    radial-gradient(circle at 88% 8%, rgba(200, 182, 255, 0.55) 0, transparent 16%),
-    radial-gradient(circle at 78% 32%, rgba(184, 240, 194, 0.55) 0, transparent 12%),
-    radial-gradient(circle at 8% 62%, rgba(255, 243, 168, 0.65) 0, transparent 18%),
-    radial-gradient(circle at 92% 78%, rgba(184, 224, 255, 0.6) 0, transparent 14%),
-    radial-gradient(circle at 28% 92%, rgba(255, 195, 221, 0.45) 0, transparent 12%),
-    radial-gradient(circle at 62% 48%, rgba(200, 182, 255, 0.35) 0, transparent 10%);
+    radial-gradient(circle at 12% 18%, var(--glow-pink) 0, transparent 14%),
+    radial-gradient(circle at 88% 8%, var(--glow-purple) 0, transparent 16%),
+    radial-gradient(circle at 78% 32%, var(--glow-green) 0, transparent 12%),
+    radial-gradient(circle at 8% 62%, var(--glow-yellow) 0, transparent 18%),
+    radial-gradient(circle at 92% 78%, var(--glow-blue) 0, transparent 14%),
+    radial-gradient(circle at 28% 92%, var(--glow-pink-soft) 0, transparent 12%),
+    radial-gradient(circle at 62% 48%, var(--glow-purple-soft) 0, transparent 10%);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 * {
-  border-color: rgba(26, 26, 46, 0.08);
+  border-color: var(--border-ink);
 }
 
 ::selection {
   background: var(--color-yellow);
   color: var(--color-text);
+}
+
+:root[data-theme="dark"] .prose pre {
+  background: #0a0920;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+:root[data-theme="dark"] .prose img {
+  border-color: rgba(236, 233, 255, 0.15);
+}
+
+:root[data-theme="dark"] .prose a {
+  text-decoration-color: var(--color-purple);
 }
 
 .prose :where(h1, h2, h3, h4) {

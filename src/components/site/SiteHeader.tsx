@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { ThemeBadge } from "./ThemeBadge";
+import { ThemeToggle } from "./ThemeToggle";
 
 const NAV_STYLES: Record<string, string> = {
   "/blog/": "bg-blue/70 hover:bg-blue",
@@ -11,7 +12,10 @@ const NAV_STYLES: Record<string, string> = {
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-30 border-b-2 border-ink/10 bg-white/85 backdrop-blur">
+    <header
+      className="sticky top-0 z-30 border-b-2 border-ink/10 backdrop-blur"
+      style={{ backgroundColor: "var(--header-bg)" }}
+    >
       <div className="mx-auto flex max-w-wide items-center gap-4 px-4 py-3 md:px-6">
         <Link
           href="/"
@@ -21,7 +25,9 @@ export function SiteHeader() {
           <ThemeBadge className="h-8 w-8" />
           <span>{site.name}</span>
         </Link>
-        <nav aria-label="Primary" className="ml-auto">
+        <div className="ml-auto flex items-center gap-2">
+        <ThemeToggle />
+        <nav aria-label="Primary">
           <ul className="flex flex-wrap items-center gap-1.5 text-sm font-mono">
             {site.nav.slice(1).map((item) => {
               const styles = NAV_STYLES[item.href] ?? "bg-purple/60 hover:bg-purple";
@@ -38,6 +44,7 @@ export function SiteHeader() {
             })}
           </ul>
         </nav>
+        </div>
       </div>
     </header>
   );
