@@ -1,0 +1,29 @@
+---
+title: "Physics Updates"
+slug: "physics-updates"
+date: 01-02-2026
+description: "Refactoring the vehicle physics in Race Wars — new suspension model and weight transfer fixes."
+tags: ["race-wars", "gamedev", "unreal"]
+---
+
+A round-up of what's changed in the Race Wars physics model this month. The big one is the
+suspension — we finally have a MacPherson strut setup that doesn't bottom out at speed.
+
+<Callout type="tip">
+  This is an MDX post — you can drop in custom React components like `<Callout>`, `<YouTube>`,
+  and `<OutLink>` directly in your markdown.
+</Callout>
+
+## What changed
+
+- Re-tuned spring rates per axle.
+- Added a small amount of negative camber gain under compression.
+- Replaced the magic dampening constant with a derived one from spring rate.
+
+```ts
+// derived damping coefficient
+const damping = springRate * 0.35;
+```
+
+Next up: the tire model. Currently it's pure lateral-grip saturation, which is fine for arcade
+but causes weird behavior on kerbs. Plan is a simplified Pacjeka curve.

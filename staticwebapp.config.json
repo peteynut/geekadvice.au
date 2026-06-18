@@ -1,0 +1,57 @@
+{
+  "globalHeaders": {
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "X-Frame-Options": "SAMEORIGIN",
+    "Permissions-Policy": "camera=(), microphone=(), geolocation=()"
+  },
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/favicon.svg", "/robots.txt", "/rss.xml", "/sitemap.xml", "/sitemap-*.xml", "/og.svg"]
+  },
+  "responseOverrides": {
+    "/rss.xml": {
+      "headers": {
+        "Content-Type": "application/xml; charset=utf-8"
+      }
+    }
+  },
+  "routes": [
+    {
+      "route": "/index.php/sample-page/",
+      "statusCode": 301,
+      "redirect": "/about/"
+    },
+    {
+      "route": "/index.php/music/",
+      "statusCode": 301,
+      "redirect": "/music/"
+    },
+    {
+      "route": "/index.php/category/racewars/",
+      "statusCode": 301,
+      "redirect": "/blog/?tag=race-wars"
+    },
+    {
+      "route": "/index.php/2026/02/01/physics-updates/",
+      "statusCode": 301,
+      "redirect": "/blog/physics-updates/"
+    },
+    {
+      "route": "/index.php/2025/10/19/v0-0-965-release-notes/",
+      "statusCode": 301,
+      "redirect": "/blog/v0-0-965-release-notes/"
+    },
+    {
+      "route": "/index.php/2025/10/17/steamapi-in-unreal-engine/",
+      "statusCode": 301,
+      "redirect": "/blog/steamapi-in-unreal-engine/"
+    },
+    {
+      "route": "/index.php/2025/10/16/race-wars-submitted-to-steam-store/",
+      "statusCode": 301,
+      "redirect": "/blog/race-wars-submitted-to-steam-store/"
+    }
+  ]
+}
