@@ -274,4 +274,15 @@ before merging to `main`.
 
 ## License
 
-Personal site — all rights reserved by Peteyyy.
+- **Source code** (everything in this repo that isn't a blog post, page copy,
+  or font file) is licensed under the [MIT License](LICENSE). Fork it, learn
+  from it, build on it — just keep the copyright notice.
+- **Written content** (blog posts and page copy under `src/content/`) is
+  licensed under
+  [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/). You're
+  welcome to quote and share with attribution, but please ask before
+  republishing whole posts or remixing them.
+- **Bundled fonts** under `public/fonts/` keep their original
+  [SIL Open Font License v1.1](https://openfontlicense.org) terms. See
+  [`public/fonts/README.md`](public/fonts/README.md) for credits and the
+  per-font license texts.
