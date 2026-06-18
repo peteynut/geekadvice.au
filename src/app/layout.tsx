@@ -1,13 +1,37 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono, VT323 } from "next/font/google";
+import localFont from "next/font/local";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
-const jet = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jet", display: "swap" });
-const vt323 = VT323({ weight: "400", subsets: ["latin"], variable: "--font-vt323", display: "swap" });
+const inter = localFont({
+  src: [
+    { path: "../../public/fonts/Inter-Regular.woff2", weight: "400", style: "normal" },
+    { path: "../../public/fonts/Inter-Medium.woff2", weight: "500", style: "normal" },
+    { path: "../../public/fonts/Inter-Bold.woff2", weight: "700", style: "normal" },
+  ],
+  variable: "--font-inter",
+  display: "swap",
+  fallback: ["system-ui", "sans-serif"],
+});
+
+const jet = localFont({
+  src: [
+    { path: "../../public/fonts/JetBrainsMono-Regular.woff2", weight: "400", style: "normal" },
+    { path: "../../public/fonts/JetBrainsMono-Bold.woff2", weight: "700", style: "normal" },
+  ],
+  variable: "--font-jet",
+  display: "swap",
+  fallback: ["ui-monospace", "monospace"],
+});
+
+const vt323 = localFont({
+  src: [{ path: "../../public/fonts/VT323-Regular.woff2", weight: "400", style: "normal" }],
+  variable: "--font-vt323",
+  display: "swap",
+  fallback: ["ui-monospace", "monospace"],
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
