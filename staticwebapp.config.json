@@ -1,4 +1,5 @@
 {
+  "trailingSlash": "always",
   "globalHeaders": {
     "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
     "X-Content-Type-Options": "nosniff",
@@ -6,15 +7,17 @@
     "X-Frame-Options": "SAMEORIGIN",
     "Permissions-Policy": "camera=(), microphone=(), geolocation=()"
   },
+  "mimeTypes": {
+    ".xml": "application/xml; charset=utf-8",
+    ".svg": "image/svg+xml"
+  },
   "navigationFallback": {
-    "rewrite": "/index.html",
-    "exclude": ["/favicon.svg", "/robots.txt", "/rss.xml", "/sitemap.xml", "/sitemap-*.xml", "/og.svg"]
+    "rewrite": "index.html",
+    "exclude": ["/favicon.svg", "/robots.txt", "/rss.xml", "/og.svg", "/images/*"]
   },
   "responseOverrides": {
-    "/rss.xml": {
-      "headers": {
-        "Content-Type": "application/xml; charset=utf-8"
-      }
+    "404": {
+      "rewrite": "/404.html"
     }
   },
   "routes": [
