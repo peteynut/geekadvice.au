@@ -129,8 +129,6 @@ blog index or RSS.
 
 ```
 GeekAdviceWebsite/
-├── .kilo/
-│   └── plans/geekadvice-rebuild.md   # the architecture plan this README implements
 ├── public/
 │   ├── favicon.svg                   # pixel ">" terminal cursor mark
 │   ├── og.svg                        # OG card fallback
