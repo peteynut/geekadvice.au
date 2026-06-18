@@ -6,7 +6,7 @@ export function PostCard({ post, featured = false }: { post: Post; featured?: bo
   return (
     <article
       className={
-        "group relative rounded-2xl border border-ink/10 bg-white p-6 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-cardHover " +
+        "group relative rounded-2xl border border-ink/10 bg-surface p-6 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-cardHover " +
         (featured ? "md:p-8" : "")
       }
     >

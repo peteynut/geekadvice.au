@@ -12,7 +12,7 @@ export default function HomePage() {
 
   return (
     <Container>
-      <section className="relative mt-10 overflow-hidden rounded-3xl border-2 border-ink/10 bg-white/70 p-8 shadow-card backdrop-blur-sm md:p-14">
+      <section className="relative mt-10 overflow-hidden rounded-3xl border-2 border-ink/10 bg-surface/80 p-8 shadow-card backdrop-blur-sm md:p-14">
         <div className="absolute inset-0 -z-10 bg-gradient-to-br from-purple/40 via-blue/30 to-yellow/40" />
         <div className="max-w-2xl">
           <p className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-ink/70">

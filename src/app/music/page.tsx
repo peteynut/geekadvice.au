@@ -38,7 +38,7 @@ export default function MusicPage() {
             }}
           />
         </div>
-        <div className="mt-8 overflow-hidden rounded-2xl border border-ink/10 bg-white">
+        <div className="mt-8 overflow-hidden rounded-2xl border border-ink/10 bg-surface">
           <iframe
             title="SoundCloud"
             width="100%"
