@@ -27,10 +27,12 @@ function applyTheme(theme: Theme) {
 }
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>(() => getStored() ?? "system");
+  const [theme, setTheme] = useState<Theme>("system");
 
   useEffect(() => {
-    applyTheme(theme);
+    const initialTheme = getStored() ?? "system";
+    setTheme(initialTheme);
+    applyTheme(initialTheme);
 
     const mql = window.matchMedia("(prefers-color-scheme: dark)");
     const onSystemChange = () => {
@@ -39,7 +41,7 @@ export function ThemeToggle() {
     };
     mql.addEventListener("change", onSystemChange);
     return () => mql.removeEventListener("change", onSystemChange);
-    // theme is intentionally read once on mount; subsequent changes go through update().
+    // local storage is intentionally read once on mount; subsequent changes go through update().
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

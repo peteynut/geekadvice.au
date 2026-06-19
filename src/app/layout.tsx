@@ -58,7 +58,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${jet.variable} ${vt323.variable}`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${inter.variable} ${jet.variable} ${vt323.variable}`}
+    >
       <body className="flex min-h-screen flex-col font-sans">
         <script
           dangerouslySetInnerHTML={{

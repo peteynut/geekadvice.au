@@ -3,8 +3,8 @@ import { Github, Music, Gamepad2 } from "lucide-react";
 
 export function SiteFooter() {
   return (
-    <footer className="mt-24 border-t border-ink/10 bg-surface">
-      <div className="mx-auto grid max-w-wide gap-6 px-4 py-10 md:grid-cols-3 md:px-6">
+    <footer className="mt-16 border-t border-ink/10 bg-surface md:mt-24">
+      <div className="mx-auto grid max-w-wide gap-6 px-4 py-8 md:grid-cols-3 md:px-6 md:py-10">
         <div>
           <p className="font-retro text-2xl text-ink">{site.name}</p>
           <p className="mt-2 text-sm text-muted">{site.description}</p>
@@ -57,7 +57,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-ink/10">
-        <div className="mx-auto flex max-w-wide items-center justify-between px-4 py-4 text-xs text-muted md:px-6">
+        <div className="mx-auto flex max-w-wide flex-col items-start gap-1.5 px-4 py-4 text-xs text-muted sm:flex-row sm:items-center sm:justify-between md:px-6">
           <p>
             &copy; {new Date().getFullYear()} {site.author}. All rights reserved.
           </p>
