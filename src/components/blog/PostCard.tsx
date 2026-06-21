@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Post } from "@/lib/content";
 import { PostMeta } from "./PostMeta";
@@ -10,6 +11,18 @@ export function PostCard({ post, featured = false }: { post: Post; featured?: bo
         (featured ? "md:p-8" : "")
       }
     >
+      {post.frontmatter.cover && (
+        <div className="relative mb-5 overflow-hidden rounded-xl border border-ink/10">
+          <Image
+            src={post.frontmatter.cover}
+            alt={`${post.frontmatter.title} cover image`}
+            width={1200}
+            height={675}
+            className="h-40 w-full object-cover transition-transform duration-300 group-hover:scale-[1.02] md:h-48"
+            sizes="(min-width: 768px) 50vw, 100vw"
+          />
+        </div>
+      )}
       <h3
         className={
           "font-retro tracking-tight text-ink group-hover:underline decoration-purple decoration-2 underline-offset-4 " +
